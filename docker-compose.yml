@@ -2,7 +2,8 @@ version: '3.4'
 
 services:
   new-api:
-    image: calciumion/new-api:latest
+    # image: calciumion/new-api:latest
+    image: custom/new-api
     container_name: new-api
     restart: always
     command: --log-dir /app/logs
@@ -12,7 +13,7 @@ services:
       - ./data:/data
       - ./logs:/app/logs
     environment:
-      - SQL_DSN=root:123456@tcp(mysql:3306)/new-api  # Point to the mysql service
+      - SQL_DSN=root:0DA2GDuoPvV3CF7HyLmH@tcp(mysql:3306)/new-api  # Point to the mysql service
       - REDIS_CONN_STRING=redis://redis
       - TZ=Asia/Shanghai
     #      - SESSION_SECRET=random_string  # 多机部署时设置，必须修改这个随机字符串！！！！！！！
@@ -39,7 +40,7 @@ services:
     container_name: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 123456  # Ensure this matches the password in SQL_DSN
+      MYSQL_ROOT_PASSWORD: 0DA2GDuoPvV3CF7HyLmH  # Ensure this matches the password in SQL_DSN
       MYSQL_DATABASE: new-api
     volumes:
       - mysql_data:/var/lib/mysql
