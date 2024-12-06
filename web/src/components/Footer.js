@@ -17,7 +17,10 @@ const FooterBar = () => {
 
   const defaultFooter = (
     <div className='custom-footer'>
-      <a
+      <div>本站API适用于测试和体验目的，请自觉遵守您当地法律法规，切勿用于非法用途，本站不承担任何法律责任</div>
+      <div>联系方式：QQ: 640709208 微信: mlysc88</div>
+      <div>© 2024 by NiKa API. All rights reserved.</div>
+      {/* <a
         href='https://github.com/Calcium-Ion/new-api'
         target='_blank'
         rel='noreferrer'
@@ -39,7 +42,7 @@ const FooterBar = () => {
         rel='noreferrer'
       >
         One API
-      </a>
+      </a> */}
     </div>
   );
 
